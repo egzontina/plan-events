@@ -1,0 +1,18 @@
+.preview-view p {
+  word-break: break-all;
+}
+.preview {
+  border: 1px solid #F5F7FB;
+  border-radius: 0 0 18px 18px;
+}
+.preview img{
+  object-fit: contain;
+  max-height: 350px;
+  border-radius: 0 0 18px 18px;
+}
+.min-height-el{
+  min-height: 15%;
+}
+#map {
+  height: 140px;
+}

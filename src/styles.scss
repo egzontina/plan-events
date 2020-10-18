@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css?family=Work+Sans:300,400,500');
+@import "~@angular/material/prebuilt-themes/indigo-pink.css";
+@import '~@angular/material/theming';
+@include mat-core();
+
+//@import '~@angular/material/theming';
+//
+//$custom-typography: mat-typography-config(
+//  $font-family: 'Work Sans' sans-serif
+//  //$headline: mat-typography-level(24px, 32px, 700),
+//  //$body-1: mat-typography-level(16px, 24px, 500)
+//);
+//
+//@include mat-core($custom-typography);
+
+
+.full-width {
+  width: 100%;
+}
+
+.bg-whitesmoke {
+  background-color: whitesmoke;
+}
+
+.p-3 {
+  padding: 30px !important;
+}
+
+.pt-3 {
+  padding-top: 30px;
+}
+.mb-3{
+  margin-bottom: 30px;
+}
+.purple-btn{
+  background: #A8227D;
+  border-radius: 2px;
+  color:white;
+}

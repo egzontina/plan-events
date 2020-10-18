@@ -1,0 +1,72 @@
+<form [formGroup]="eventForm" class="event-form"  (ngSubmit)="onEventFormSubmit()">
+    <div class="p-3 form-fields">
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Privacy</mat-label>
+      <mat-select formControlName="privacy">
+        <mat-option *ngFor="let item of privacyList" [value]="item">{{ item | titlecase }}</mat-option>
+      </mat-select>
+      <mat-icon matSuffix svgIcon="down_arrow"></mat-icon>
+    </mat-form-field>
+    <mat-form-field appearance="outline" class="full-width">
+      <input matInput placeholder="Event name" formControlName="name">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <input matInput [ngxMatDatetimePicker]="startPicker" placeholder="Start date and time"
+             formControlName="startDateTime">
+      <mat-datepicker-toggle matPrefix [for]="startPicker">
+        <mat-icon matDatepickerToggleIcon svgIcon="calendar"></mat-icon>
+      </mat-datepicker-toggle>
+      <ngx-mat-datetime-picker #startPicker [showSpinners]="false" [showSeconds]="true"
+                               [stepHour]="1" [stepMinute]="1" [stepSecond]="1"
+                               [touchUi]="false" [color]="color" [enableMeridian]="false">
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <input matInput [ngxMatDatetimePicker]="endPicker" placeholder="End date and time" formControlName="endDateTime"
+      >
+      <mat-datepicker-toggle matPrefix [for]="endPicker">
+        <mat-icon matDatepickerToggleIcon svgIcon="calendar"></mat-icon>
+      </mat-datepicker-toggle>
+      <ngx-mat-datetime-picker #endPicker [showSpinners]="false" [showSeconds]="true"
+                               [stepHour]="1" [stepMinute]="1" [stepSecond]="1"
+                               [touchUi]="false" [color]="color" [enableMeridian]="false">
+      </ngx-mat-datetime-picker>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label>Event category</mat-label>
+      <mat-select name="category" formControlName="category" placeholder="Event category" required>
+        <mat-option *ngFor="let item of categoriesList" [value]="item.Category">{{ item.Category }}</mat-option>
+      </mat-select>
+      <mat-icon matSuffix svgIcon="down_arrow"></mat-icon>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <input matInput placeholder="Location" formControlName="location">
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <textarea matInput placeholder="Description" formControlName="description"> </textarea>
+    </mat-form-field>
+
+    <mat-form-field appearance="outline" class="full-width">
+      <mat-label class="purple-cls">Choose photo</mat-label>
+      <ngx-mat-file-input #removableInput formControlName="photo" accept="image/*" (change)="photoPreview($event)">
+      </ngx-mat-file-input>
+      <button mat-icon-button matSuffix *ngIf="!removableInput.empty"
+              (click)="removableInput.clear($event);photoPreview($event,true)">
+        <mat-icon>clear</mat-icon>
+      </button>
+    </mat-form-field>
+    <mat-hint align="start">We recommend an image with 768 x 432 pixels</mat-hint> </div>
+
+    <app-footer></app-footer>
+</form>
+
+
+
+
+
+

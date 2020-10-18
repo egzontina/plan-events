@@ -1,0 +1,9 @@
+<app-header title="{{ title }}"></app-header>
+<div class="container" fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center">
+  <div fxFlex="30%" class="add-event">
+    <app-add-event (fillEventForm)="onFillEventForm($event)" (enableJoinBtn)="onEnableJoinBtn($event)" ></app-add-event>
+  </div>
+  <div fxFlex="70%">
+    <app-preview-event [data]="eventFormData" [isJoinBtnEnabled]="isJoinBtnEnable"></app-preview-event>
+  </div>
+</div>
