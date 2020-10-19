@@ -1,8 +1,7 @@
 ## About
-An Angular project that builds a Front-End application to display  design to register  and preview an event.
+An Angular project that builds a Front-End application to display a page to register  and preview an event.
 
 App is running at [https://egzontina.github.io/event-planner/](https://egzontina.github.io/event-planner/).
-
 
 
 ## Installing and running for the first time locally
@@ -32,25 +31,26 @@ Main Dependencies:
 2. Angular Flex-Layout (@angular/flex-layout) 
 
 
-**Project Structure**
 
-|-- app
-     |-- components
-       |-- event
-           |-- [+] add-event
-           |-- [+] preview-event
-           |-- [+] event
-           |-- event.service.ts
-     |
-     |-- shared
-          |-- [+] header
-          |-- [+] footer
-          |-- [+] models
-     |
-     |-- [+] environments
-|-- assets
-     |-- [+] icons
-     
+## Project Structure## 
+
+     |-- app
+        |-- components
+            |-- event
+                |-- [+] add-event
+                |-- [+] preview-event
+                |-- [+] event
+                |-- event.service.ts
+        |
+        |-- shared
+            |-- [+] header
+            |-- [+] footer
+            |-- [+] models
+        |
+        |-- [+] environments
+     |-- assets
+          |-- [+] icons
+
 
 ## Deploy the app to GitHub Pages
 
@@ -68,5 +68,5 @@ Example is runnable from WebStorm IDE.
 
 #### Author
 
-[Egzontina Krasniqi](https://github.com/egzontina).
+[Egzontina Krasniqi](https://github.com/egzontina)
 
