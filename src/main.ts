@@ -10,3 +10,5 @@ if (environment.production) {
 
 platformBrowserDynamic().bootstrapModule(AppModule)
   .catch(err => console.error(err));
+
+console.log('%c ©2020 Egzontina Krasniqi', 'font-size: 25px;');
