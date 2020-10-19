@@ -31,8 +31,7 @@ Main Dependencies:
 2. Angular Flex-Layout (@angular/flex-layout) 
 
 
-
-## Project Structure## 
+## Project Structure
 
      |-- app
         |-- components
