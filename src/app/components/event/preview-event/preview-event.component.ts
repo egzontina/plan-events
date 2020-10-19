@@ -1,6 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {IEvent} from '../../../shared/models/event';
 import * as L from 'leaflet';
+import {environment} from '../../../../environments/environment';
 
 @Component({
     selector: 'app-preview-event',
@@ -9,7 +10,7 @@ import * as L from 'leaflet';
 })
 export class PreviewEventComponent implements OnInit {
 
-    defaultImg = '../assets/placeholder-img.png';
+    defaultImg = environment.assetsPath  + '/placeholder-img.png';
     map: any;
     @Input() data: IEvent;
     @Input() isJoinBtnEnabled = false;

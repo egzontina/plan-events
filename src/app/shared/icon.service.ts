@@ -1,6 +1,7 @@
 import {Injectable} from '@angular/core';
 import {MatIconRegistry} from '@angular/material';
 import {DomSanitizer} from '@angular/platform-browser';
+import {environment} from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
@@ -18,8 +19,8 @@ export class IconService {
 
   private loadIcons(): void {
      this.matIconRegistry.addSvgIcon('calendar',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/calendar.svg'));
+      this.domSanitizer.bypassSecurityTrustResourceUrl( environment.assetsPath + '/icons/calendar.svg'));
      this.matIconRegistry.addSvgIcon('down_arrow',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/down-arrow.svg'));
+      this.domSanitizer.bypassSecurityTrustResourceUrl(environment.assetsPath  + '/icons/down-arrow.svg'));
   }
 }
