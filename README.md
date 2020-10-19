@@ -38,17 +38,19 @@ Main Dependencies:
             |-- event
                 |-- [+] add-event
                 |-- [+] preview-event
-                |-- [+] event
+                |-- event [+]
                 |-- event.service.ts
         |
         |-- shared
             |-- [+] header
             |-- [+] footer
             |-- [+] models
+            |-- icon.service.ts
         |
         |-- [+] environments
      |-- assets
           |-- [+] icons
+          |-- ...
 
 
 ## Deploy the app to GitHub Pages
