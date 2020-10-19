@@ -1,11 +1,11 @@
 export interface IEvent {
+  name: string;
   category: string;
   description: string;
-  endDateTime: Date;
   location: string;
-  name: string;
   photo: any;
-  photoPreview: string;
+  preview: string;
   privacy: string;
-  startDateTime: Date;
+  start: Date;
+  end: Date;
 }

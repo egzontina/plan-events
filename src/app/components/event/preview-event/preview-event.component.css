@@ -16,3 +16,6 @@
 #map {
   height: 140px;
 }
+.align-v{
+  vertical-align: middle;
+}

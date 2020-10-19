@@ -14,7 +14,6 @@ export class AddEventComponent implements OnInit {
   eventForm: FormGroup;
   privacyList = ['private', 'public'];
   categoriesList: IEventCategory[] = [];
-  public color: ThemePalette = 'primary';
 
   @Output() fillEventForm = new EventEmitter();
   @Output() enableJoinBtn = new EventEmitter();
@@ -34,13 +33,13 @@ export class AddEventComponent implements OnInit {
     this.eventForm = this.formBuilder.group({
       privacy: [this.privacyList[0]],
       name: [''],
-      startDateTime: [''],
-      endDateTime: [''],
+      start: [''],
+      end: [''],
       category: ['', Validators.required],
       location: [''],
       description: [''],
       photo: [''],
-      photoPreview: ['']
+      preview: ['']
     });
   }
 
@@ -60,14 +59,14 @@ export class AddEventComponent implements OnInit {
 
   photoPreview(event, remove?: boolean) {
     if (remove) {
-      this.eventForm.patchValue({photoPreview: ''});
+      this.eventForm.patchValue({preview: ''});
       return;
     }
     const file = (event.target as HTMLInputElement).files[0];
     const reader = new FileReader();
     reader.onload = () => {
       this.eventForm.patchValue({
-        photoPreview: reader.result as string
+        preview: reader.result as string
       });
     };
     reader.readAsDataURL(file);

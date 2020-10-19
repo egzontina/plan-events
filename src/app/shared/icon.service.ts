@@ -18,8 +18,8 @@ export class IconService {
 
   private loadIcons(): void {
      this.matIconRegistry.addSvgIcon('calendar',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icon/calendar.svg'));
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/calendar.svg'));
      this.matIconRegistry.addSvgIcon('down_arrow',
-      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icon/down-arrow.svg'));
+      this.domSanitizer.bypassSecurityTrustResourceUrl('../assets/icons/down-arrow.svg'));
   }
 }

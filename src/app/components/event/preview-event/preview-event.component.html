@@ -1,41 +1,45 @@
 <div class="p-3 preview-view ">
-  <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center">
-    <div fxFlex="100%" class="preview bg-whitesmoke">
-      <img class="full-width" [src]="checkPath(data?.photoPreview)" alt="Event Photo">
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutAlign="center">
+        <div fxFlex="100%" class="preview bg-whitesmoke">
+            <img class="full-width" [src]="checkImgPath(data?.preview)" alt="Event Photo">
+        </div>
     </div>
-  </div>
-  <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px" fxLayoutAlign="center">
-    <div fxFlex="60%" class="pt-3">
-      <h1 class="md-display-4 min-height-el" [class.bg-whitesmoke]="!data?.name"> {{ data?.name }} </h1>
-      <h4 class="md-title"> Description </h4>
-      <p class="md-subhead min-height-el" [class.bg-whitesmoke]="!data?.description">
-        {{ data?.description }}
-      </p>
-      <div class="map mb-3" #map id="map"></div>
-    </div>
-    <div fxFlex="40%" class="pt-3">
-      <mat-card class="example-card">
-        <p class="min-height-el" [class.bg-whitesmoke]="!data?.endDateTime || !data.startDateTime">
-        <mat-icon svgIcon="calendar"></mat-icon>
-        {{ data?.startDateTime | date:'dd MMM'}}
-        <span *ngIf="data?.startDateTime"> . at </span>
-        {{ data?.startDateTime | date:'HH:mm'}}
-        <span *ngIf="data?.endDateTime"> - </span>
-        <span *ngIf="!isStartEndDate()">{{ data?.endDateTime | date:'dd MMM'}}</span>
-        {{ data?.endDateTime | date:'HH:mm'}}
-        </p>
-        <mat-card-header>
-          <mat-card-subtitle>
-            <p>
-              The virtual room can be joined 10 minutes before event start time.
+    <div fxLayout="row" fxLayout.xs="column" fxLayoutGap="30px" fxLayoutAlign="center">
+        <div fxFlex="60%" class="pt-3">
+            <h1 class="md-display-4 min-height-el" [class.bg-whitesmoke]="!data?.name">
+                <strong> {{ data?.name }} </strong>
+            </h1>
+            <h4 class="md-title"><strong> Description </strong></h4>
+            <p class="md-subhead min-height-el" [class.bg-whitesmoke]="!data?.description">
+                {{ data?.description }}
             </p>
-          </mat-card-subtitle>
-        </mat-card-header>
-        <button mat-raised-button class="full-width purple-btn" [disabled]="!isJoinBtnEnabled">Join</button>
-      </mat-card>
-
-      <h4 class="pt-3 md-title"> Category </h4>
-      <p class="md-subhead" class="min-height-el" [class.bg-whitesmoke]="!data?.category"> {{ data?.category}}</p>
+            <div class="map mb-3" #map id="map"></div>
+        </div>
+        <div fxFlex="40%" class="pt-3">
+            <mat-card>
+                <p class="min-height-el" [class.bg-whitesmoke]="isDateNull(data?.start, data?.end)">
+                  <mat-icon svgIcon="calendar" class="align-v"></mat-icon>
+                    <span *ngIf="data?.start">
+                      {{ data?.start | date:'dd MMM'}}. at
+                        {{ data?.start | date:'HH:mm'}}
+                    </span>
+                    <span *ngIf="data?.end"> - </span>
+                    <span *ngIf="!isStartEndDateEqual() && data?.end">
+                      {{ data?.end | date:'dd MMM'}}. at
+                    </span>
+                    {{ data?.end | date:'HH:mm'}}
+                </p>
+                <mat-card-header>
+                    <mat-card-subtitle>
+                      <span>
+                        The virtual room can be joined 10 minutes before event start time.
+                      </span>
+                    </mat-card-subtitle>
+                </mat-card-header>
+                <button mat-raised-button class="full-width purple-btn" [disabled]="!isJoinBtnEnabled">Join</button>
+            </mat-card>
+            <h4 class="pt-3 md-title"><strong>Category</strong></h4>
+            <p class="md-subhead min-height-el" [class.bg-whitesmoke]="!data?.category"> {{ data?.category}}</p>
+        </div>
     </div>
-  </div>
 </div>

@@ -13,25 +13,25 @@
 
     <mat-form-field appearance="outline" class="full-width">
       <input matInput [ngxMatDatetimePicker]="startPicker" placeholder="Start date and time"
-             formControlName="startDateTime">
+             formControlName="start">
       <mat-datepicker-toggle matPrefix [for]="startPicker">
         <mat-icon matDatepickerToggleIcon svgIcon="calendar"></mat-icon>
       </mat-datepicker-toggle>
       <ngx-mat-datetime-picker #startPicker [showSpinners]="false" [showSeconds]="true"
                                [stepHour]="1" [stepMinute]="1" [stepSecond]="1"
-                               [touchUi]="false" [color]="color" [enableMeridian]="false">
+                               [touchUi]="false"  [enableMeridian]="false">
       </ngx-mat-datetime-picker>
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="full-width">
-      <input matInput [ngxMatDatetimePicker]="endPicker" placeholder="End date and time" formControlName="endDateTime"
+      <input matInput [ngxMatDatetimePicker]="endPicker" placeholder="End date and time" formControlName="end"
       >
       <mat-datepicker-toggle matPrefix [for]="endPicker">
         <mat-icon matDatepickerToggleIcon svgIcon="calendar"></mat-icon>
       </mat-datepicker-toggle>
       <ngx-mat-datetime-picker #endPicker [showSpinners]="false" [showSeconds]="true"
                                [stepHour]="1" [stepMinute]="1" [stepSecond]="1"
-                               [touchUi]="false" [color]="color" [enableMeridian]="false">
+                               [touchUi]="false" [enableMeridian]="false">
       </ngx-mat-datetime-picker>
     </mat-form-field>
 
